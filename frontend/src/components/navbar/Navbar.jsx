@@ -16,7 +16,7 @@ const Navbar = () => {
 
       <div className="nav-menu">
         <li><Link to='/' style={{textDecoration: 'none'}}>Shop</Link></li>
-        <li><Link to='/shopcategory' style={{textDecoration: 'none'}}>Soft-boards</Link></li>
+        <li><Link to='/shopcategory' style={{textDecoration: 'none'}}>Soft Tops</Link></li>
         <li>Retros</li>
         <li>Shortboards</li>
         <li>Longboards</li>
