@@ -5,7 +5,7 @@
 
 import React, { useContext } from 'react'
 import { ShopContext } from '../context/ShopContext'
-import './ShopCategory.css'
+import './styles/ShopCategory.css'
 import Item from '../components/item/Item'
 
 const ShopCategory = (props) => {
@@ -14,7 +14,7 @@ const ShopCategory = (props) => {
 
   return (
     <div className="shop-category">
-      <h1>{props.category}</h1>
+
       <div className="shopcategory-products">
         {products.map((item, i) => {
             if (props.category === item.category) {

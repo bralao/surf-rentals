@@ -5,7 +5,9 @@ import React from 'react'
 const Surfboard = () => {
   return (
     <div>
-      the product itself surfboard
+      Breadcrum
+      Product Display
+      Related Products
     </div>
   )
 }
