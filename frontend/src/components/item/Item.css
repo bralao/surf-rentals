@@ -1,0 +1,18 @@
+.item{
+  width: 280px;
+}
+.item:hover{
+  transform: scale(1.05);
+  transition: 0.6s;
+}
+.item img{
+  width: 280px;
+}
+.item p{
+  margin: 6px 0px;
+}
+
+.item-price{
+  display: flex;
+  gap: 20px;
+}
