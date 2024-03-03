@@ -17,7 +17,7 @@ const ShopCategory = (props) => {
       <div className="shopcategory-products">
         {products.map((item, i) => {
             if (props.category === item.category) {
-              return <Item key={i} id={item.id} name={item.name} image={item.image} new_price={item.new_price} old_price={item.old_price}/>
+              return <Item key={i} id={item.id} image={item.image} brand={item.brand} model={item.model} height={item.height} volume={item.volume} price={item.price}/>
             } else {
               return null
             }

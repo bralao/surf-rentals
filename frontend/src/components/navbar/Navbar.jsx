@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from '../assets/logo.jpg'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart, faSignIn } from '@fortawesome/free-solid-svg-icons'
 import './Navbar.css'
 
+
 const Navbar = () => {
+
+  const [menu, setMenu] = useState("shop");
+
   return (
     <div className="navbar">
 
@@ -15,11 +19,11 @@ const Navbar = () => {
       </div>
 
       <div className="nav-menu">
-        <li><Link to='/' style={{textDecoration: 'none'}}>Shop</Link></li>
-        <li><Link to='/shopcategory' style={{textDecoration: 'none'}}>Soft Tops</Link></li>
-        <li>Retros</li>
-        <li>Shortboards</li>
-        <li>Longboards</li>
+        <li onClick={()=>{setMenu("shop")}}><Link to='/' style={{textDecoration: 'none'}}>Shop</Link>{menu==="shop"?<hr/>:<></>}</li>
+        <li onClick={()=>{setMenu("soft-tops")}}><Link to='/soft-tops' style={{textDecoration: 'none'}}>Soft-tops</Link>{menu==="soft-tops"?<hr/>:<></>}</li>
+        <li onClick={()=>{setMenu("retros")}}><Link to='/retros' style={{textDecoration: 'none'}}>Retros</Link>{menu==="retros"?<hr/>:<></>}</li>
+        <li onClick={()=>{setMenu("shortboards")}}><Link to='/shortboards' style={{textDecoration: 'none'}}>Shortboards</Link>{menu==="shortboards"?<hr/>:<></>}</li>
+        <li onClick={()=>{setMenu("longboards")}}><Link to='/longboards' style={{textDecoration: 'none'}}>Longboards</Link>{menu==="longboards"?<hr/>:<></>}</li>
       </div>
 
       <div className="nav-login-cart">
