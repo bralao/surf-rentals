@@ -13,10 +13,11 @@ const Item = (props) => {
           alt=""
         />
 
-        <p>{props.brand} {props.model} {props.height} ({props.volume})</p>
+        <p>{props.brand} {props.model}</p>
+        <p>{props.height} - {props.volume}</p>
 
         <div className="item-price">
-          <p>{props.price}</p>
+          <p>from {props.price}€</p>
         </div>
       </Link>
 
