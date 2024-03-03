@@ -8,8 +8,7 @@ import React from 'react'
 const ShopCategory = () => {
   return (
     <div>
-      Shop Category
-      maps items
+      Shop Category that maps items
     </div>
   )
 }

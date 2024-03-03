@@ -14,7 +14,7 @@ const App = () => {
         <Navbar/>
         <Routes>
           <Route exact path="/" element={<Shop />} />
-          <Route path="/shopcategory1" element={<ShopCategory />} />
+          <Route path="/shopcategory" element={<ShopCategory />} />
           {/* add more routes for other categories*/}
           <Route path="/surfboard" element={<Surfboard />}>
             <Route path=':surfboardId' element={<Surfboard />} />
