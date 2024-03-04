@@ -3,7 +3,7 @@ import React from 'react'
 const RelatedSurfboards = () => {
   return (
     <div>
-      RelatedSurfboards
+      Related onesssss got to map this
     </div>
   )
 }

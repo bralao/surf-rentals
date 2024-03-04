@@ -10,13 +10,13 @@ import Item from '../components/item/Item'
 
 const ShopCategory = (props) => {
 
-  const { products } = useContext(ShopContext);
+  const { surfboards } = useContext(ShopContext);
 
   return (
     <div className="shop-category">
 
       <div className="shopcategory-products">
-        {products.map((item, i) => {
+        {surfboards.map((item, i) => {
             if (props.category === item.category) {
               return (
                 <Item

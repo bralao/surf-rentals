@@ -5,20 +5,22 @@ import { ShopContext } from '../context/ShopContext'
 import { useParams } from 'react-router-dom'
 
 import Breadcrum from '../components/breadcrum/Breadcrum'
-import ProductDisplay from '../components/productDisplay/ProductDisplay'
+import SurfboardDisplay from '../components/surfboardDisplay/SurfboardDisplay'
 import RelatedSurfboards from '../components/relatedSurfboards/RelatedSurfboards'
 
 const Surfboard = () => {
 
-  const { products } = useContext(ShopContext)
+  const { surfboards } = useContext(ShopContext)
   const { surfboardId } = useParams()
 
-  const product = products.find((e)=> e.id === Number(surfboardId))
+  const surfboard = surfboards.find((e)=> e.id === Number(surfboardId))
+
+  console.log('Surfboard:', surfboard);
 
   return (
     <div>
-      <Breadcrum/>
-      <ProductDisplay/>
+      <Breadcrum surfboard={surfboard}/>
+      <SurfboardDisplay surfboard={surfboard}/>
       <RelatedSurfboards/>
     </div>
   )
