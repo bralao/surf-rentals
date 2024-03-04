@@ -10,7 +10,7 @@ import Item from '../components/item/Item'
 
 const ShopCategory = (props) => {
 
-  const { products } = useContext(ShopContext)
+  const { products } = useContext(ShopContext);
 
   return (
     <div className="shop-category">
@@ -18,7 +18,18 @@ const ShopCategory = (props) => {
       <div className="shopcategory-products">
         {products.map((item, i) => {
             if (props.category === item.category) {
-              return <Item key={i} id={item.id} image={item.image} brand={item.brand} model={item.model} height={item.height} volume={item.volume} price={item.price}/>
+              return (
+                <Item
+                  key={item.id}
+                  id={item.id}
+                  image={item.image}
+                  brand={item.brand}
+                  model={item.model}
+                  height={item.height}
+                  volume={item.volume}
+                  price={item.price}
+                />
+              );
             } else {
               return null
             }
