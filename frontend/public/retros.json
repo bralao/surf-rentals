@@ -1,7 +1,7 @@
 {
   "Data": [
     {
-      "id": 6,
+      "id": 5,
       "image": "/images/mid610.jpg",
       "category": "retros",
       "brand": "Channel Islands",
@@ -14,7 +14,7 @@
       "description": "The CI Mid is a modern classic design resulting from a fun collaboration with Devon Howard, a southern California surfer that has spent the past two decades riding and refining egg-inspired designs that are in a category of boards many refer to as midlengths."
     },
     {
-      "id": 9,
+      "id": 6,
       "image": "/images/twinsman510.jpg",
       "category": "retros",
       "brand": "Album",
@@ -25,6 +25,32 @@
       "volume": "34.4L",
       "price": "50,00",
       "description": "Approachable for any style of surfing. A board that you can really push on rail or just enjoy the easy down the line speed."
+    },
+    {
+      "id": 7,
+      "image": "/images/fishbeard510.jpg",
+      "category": "retros",
+      "brand": "Channel Islands",
+      "model": "Fishbeard",
+      "height": "5'10\"",
+      "width": "19 7/8\"",
+      "thickness": "2 9/16",
+      "volume": "32.4L",
+      "price": "40,00",
+      "description": "Get forward on this user-friendly board and drive from the center and you’ll have all the speed and flow you always desired."
+    },
+    {
+      "id": 8,
+      "image": "/images/mid76.jpg",
+      "category": "retros",
+      "brand": "Channel Islands",
+      "model": "Mid",
+      "height": "7'6\"",
+      "width": "21 3/4\"",
+      "thickness": "2 7/8",
+      "volume": "51.8L",
+      "price": "40,00",
+      "description": "The CI Mid is a modern classic design resulting from a fun collaboration with Devon Howard, a southern California surfer that has spent the past two decades riding and refining egg-inspired designs that are in a category of boards many refer to as midlengths."
     }
   ]
 }
