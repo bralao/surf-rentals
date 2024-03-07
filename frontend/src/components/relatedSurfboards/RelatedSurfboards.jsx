@@ -1,5 +1,6 @@
 import React from 'react'
 import './RelatedSurfboards.css'
+import {Link} from 'react-router-dom'
 
 const RelatedSurfboards = ({allSurfboards, chosenSurfboard}) => {
 
@@ -11,14 +12,21 @@ const RelatedSurfboards = ({allSurfboards, chosenSurfboard}) => {
 
   return (
     <div className="related-surfboards">
-      <h2>Related Surfboards</h2>
-      <div className="surfboards-items">
-        {relatedSurfboards.map((surfboard) => (
-          <div className="surfboard-item" key={surfboard.id}>
-            <img src={surfboard.image} alt={surfboard.model} />
-            <h3>{surfboard.model}</h3>
-            <p>{surfboard.price}</p>
-          </div>
+      <h3>Related Surfboards</h3>
+      <div className="items">
+        {relatedSurfboards.slice(0,4).map((surfboard) => (
+
+          <Link key={surfboard.id} to={`/${surfboard.category}/${surfboard.id}`}>
+            <div onClick={window.scrollTo(0, 0)} className="item">
+              <img src={surfboard.image} alt={surfboard.model} />
+              <p>{surfboard.brand} {surfboard.model}</p>
+              <p>{surfboard.height} - {surfboard.volume}</p>
+
+              <div className="item-price">
+                <p>from {surfboard.price}</p>
+              </div>
+            </div>
+          </Link>
         ))}
       </div>
     </div>
