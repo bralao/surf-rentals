@@ -1,11 +1,11 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/navbar/Navbar.jsx'
-import Shop from './pages/Shop.jsx'
+import Shop from './pages/ShopPage.jsx'
 import CategoryPage from './pages/CategoryPage.jsx'
-import Surfboard from './pages/Surfboard.jsx'
-import Cart from './pages/Cart.jsx'
-import LoginSignup from './pages/LoginSignup.jsx'
+import Surfboard from './pages/SurfboardPage.jsx'
+import Cart from './pages/CartPage.jsx'
+import LoginSignup from './pages/LoginSignupPage.jsx'
 
 const App = () => {
   return (
