@@ -1,27 +1,43 @@
-// render breadcrum, productdisplay, relatedsurfboards
-
-import React, { useContext } from 'react'
-import { ShopContext } from '../context/ShopContext'
-import { useParams } from 'react-router-dom'
-
-import Breadcrum from '../components/breadcrum/Breadcrum'
-import ProductDisplay from '../components/productDisplay/ProductDisplay'
-import RelatedSurfboards from '../components/relatedSurfboards/RelatedSurfboards'
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import Breadcrum from '../components/breadcrum/Breadcrum';
+import SurfboardDisplay from '../components/surfboardDisplay/SurfboardDisplay';
+import RelatedSurfboards from '../components/relatedSurfboards/RelatedSurfboards';
 
 const Surfboard = () => {
+  const { category, surfboardId } = useParams();
+  const [ surfboard, setSurfboard ] = useState({});
 
-  const { products } = useContext(ShopContext)
-  const { surfboardId } = useParams()
+  useEffect(() => {
 
-  const product = products.find((e)=> e.id === Number(surfboardId))
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`/${category}.json`);
+        if (!response.ok) {
+          throw new Error(`Failed to fetch ${category} data`);
+        }
+        const data = await response.json();
+        const foundSurfboard = data.Data.find((item) => item.id === parseInt(surfboardId));
+        if (foundSurfboard) {
+          setSurfboard(foundSurfboard);
+        } else {
+          throw new Error(`Surfboard with ID ${surfboardId} not found in ${category}`);
+        }
+      } catch (error) {
+        console.error(`Error fetching ${category} data:`, error);
+      }
+    };
+
+    fetchData();
+  }, [category, surfboardId]);
 
   return (
     <div>
-      <Breadcrum/>
-      <ProductDisplay/>
-      <RelatedSurfboards/>
+      <Breadcrum surfboard={surfboard} />
+      <SurfboardDisplay surfboard={surfboard} />
+      <RelatedSurfboards />
     </div>
-  )
-}
+  );
+};
 
-export default Surfboard
+export default Surfboard;

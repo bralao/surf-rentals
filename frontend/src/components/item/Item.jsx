@@ -6,12 +6,8 @@ const Item = (props) => {
   return (
     <div className="item">
 
-      <Link to={`/surfboard/${props.id}`}>
-        <img
-          onClick={window.scrollTo(0, 0)}
-          src={props.image}
-          alt=""
-        />
+      <Link key={props.id} to={`/${props.category}/${props.id}`}>
+        <img onClick={window.scrollTo(0, 0)} src={props.image} alt=""/>
 
         <p>{props.brand} {props.model}</p>
         <p>{props.height} - {props.volume}</p>
