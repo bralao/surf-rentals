@@ -1,0 +1,19 @@
+.shop-category{
+  margin-left: 250px;
+  margin-right: 250px;
+}
+
+.shop-category h1{
+  text-align: center;
+  margin-top: 50px;
+}
+
+.shopcategory-items{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 50px;
+}
+
+.shopcategory-item{
+  padding: 10px;
+}

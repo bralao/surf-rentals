@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import './styles/ShopCategory.css'
+import './styles/CategoryPage.css'
 import Item from '../components/item/Item'
 
 
@@ -25,9 +25,10 @@ const CategoryPage = (props) => {
 
   return (
     <div className="shop-category">
-      <div className="shopcategory-products">
+      <h1 style={{ textTransform: 'capitalize' }}>{props.category}</h1>
+      <div className="shopcategory-items">
         {surfboards.map((item) => (
-          <div key={item.id}>
+          <div className="shopcategory-item" key={item.id}>
             <Item
               item={item}
             />
