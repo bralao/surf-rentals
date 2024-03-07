@@ -1,0 +1,28 @@
+.related-surfboards {
+  margin: 200px;
+  overflow-x: auto;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.surfboards-items {
+  display: flex;
+  gap: 100px;
+  padding: 10px;
+  justify-content: center;
+
+}
+
+.surfboard-item {
+  flex: 0 0 auto;
+}
+
+.surfboard-item img {
+  max-width: 300px;
+  height: auto;
+}
+
+.surfboard-item h3, .surfboard-item p {
+  font-size: 14px;
+  margin: 0;
+}

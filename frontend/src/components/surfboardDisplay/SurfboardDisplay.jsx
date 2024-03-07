@@ -9,9 +9,7 @@ const SurfboardDisplay = (props) => {
     <div className="productdisplay">
 
       <div className="productdisplay-left">
-        <div className="productdisplay-img">
-          <img src={surfboard.image} alt="" />
-        </div>
+        <img src={surfboard.image} alt="" />
       </div>
 
       <div className="productdisplay-right">
@@ -19,7 +17,8 @@ const SurfboardDisplay = (props) => {
         <h1>{surfboard.brand} {surfboard.model} {surfboard.height} ({surfboard.volume})</h1>
         <h3>from €{surfboard.price}</h3>
         <p>{surfboard.description}</p>
-        <h3>{surfboard.height} x {surfboard.width} x {surfboard.thickness}</h3>
+        <h3>Dimensions: {surfboard.height} x {surfboard.width} x {surfboard.thickness}</h3>
+        <h3>Volume: {surfboard.volume} </h3>
       </div>
     </div>
   )
