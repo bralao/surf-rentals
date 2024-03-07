@@ -16,15 +16,15 @@ const ShopContextProvider = (props) => {
         }
         const data = await response.json();
         console.log('Data:', data);
-        setSurfboards(data.Data); // Accessing the "Data" key
+        setSurfboards(data.Data); // "Data" key in surfboards.json
       } catch (error) {
         console.log('Error fetching data:', error);
       }
     };
-
-
     fetchData();
   }, []);
+
+
 
   const addToCart = (product) => {
     setCart([...cart, product]);

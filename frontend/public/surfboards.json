@@ -3,7 +3,7 @@
     {
       "id": 1,
       "image": "/images/torqlongboard8.jpg",
-      "category": "Soft-top",
+      "category": "soft-tops",
       "brand": "Torq",
       "model": "Longboard - Soft Deck",
       "height": "8'0\"",
@@ -16,7 +16,7 @@
     {
       "id": 2,
       "image": "/images/torqlongboard9.jpg",
-      "category": "Soft-top",
+      "category": "soft-tops",
       "brand": "Torq",
       "model": "Longboard - Soft Deck",
       "height": "9'0\"",
@@ -29,7 +29,7 @@
     {
       "id": 3,
       "image": "/images/dominator60.jpg",
-      "category": "Shortboard",
+      "category": "shortboards",
       "brand": "FireWire",
       "model": "Dominator II",
       "height": "6'4\"",
@@ -42,7 +42,7 @@
     {
       "id": 4,
       "image": "/images/hyptokrypto66.jpg",
-      "category": "Shortboard",
+      "category": "shortboards",
       "brand": "HaydenShapes",
       "model": "Hypto Krypto",
       "height": "6'6\"",
@@ -55,7 +55,7 @@
     {
       "id": 5,
       "image": "/images/inferno62.jpg",
-      "category": "Shortboard",
+      "category": "shortboards",
       "model": "Inferno 72",
       "height": "6'2\"",
       "width": "20 1/4",
@@ -67,7 +67,7 @@
     {
       "id": 6,
       "image": "/images/mid610.jpg",
-      "category": "Retro",
+      "category": "retros",
       "brand": "Channel Islands",
       "model": "Mid",
       "height": "6'10\"",
@@ -80,7 +80,7 @@
     {
       "id": 7,
       "image": "/images/thunderbolt92.jpg",
-      "category": "Longboard",
+      "category": "longboards",
       "brand": "Thunderbolt",
       "model": "Red Waikiki",
       "height": "9'2\"",
@@ -93,7 +93,7 @@
     {
       "id": 8,
       "image": "/images/phantom61.jpg",
-      "category": "Shortboard",
+      "category": "shortboards",
       "brand": "Pyzel",
       "model": "Phantom",
       "height": "6'1\"",
@@ -106,7 +106,7 @@
     {
       "id": 9,
       "image": "/images/twinsman510.jpg",
-      "category": "Retro",
+      "category": "retros",
       "brand": "Album",
       "model": "Twinsman",
       "height": "5'10\"",

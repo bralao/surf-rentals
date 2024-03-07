@@ -9,7 +9,7 @@ const Breadcrum = (props) => {
 
   return (
     <div className="breadcrum">
-      Home <FontAwesomeIcon icon={faChevronRight} /> {surfboard.category} <FontAwesomeIcon icon={faChevronRight} /> {surfboard.brand} {surfboard.model} {surfboard.height} {surfboard.volume}
+      Shop <FontAwesomeIcon icon={faChevronRight} /> {surfboard.category} <FontAwesomeIcon icon={faChevronRight} /> {surfboard.brand} {surfboard.model} {surfboard.height} {surfboard.volume}
     </div>
   )
 }
