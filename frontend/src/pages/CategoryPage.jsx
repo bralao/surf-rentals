@@ -29,15 +29,7 @@ const CategoryPage = (props) => {
         {surfboards.map((item) => (
           <div key={item.id}>
             <Item
-              id={item.id}
-              image={item.image}
-              category={item.category}
-              brand={item.brand}
-              model={item.model}
-              height={item.height}
-              volume={item.volume}
-              price={item.price}
-              description={item.description}
+              item={item}
             />
           </div>
         ))}

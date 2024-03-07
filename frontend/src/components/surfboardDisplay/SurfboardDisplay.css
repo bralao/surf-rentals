@@ -4,9 +4,9 @@
 }
 .productdisplay-left{
   display: flex;
-  gap: 17px
+  gap: 17px;
 }
-.productdisplay-img{
+.productdisplay-left img{
   width: 586px;
   height: 700px;
 }

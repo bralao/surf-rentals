@@ -5,7 +5,12 @@ import React from 'react'
 const Shop = () => {
   return (
     <div>
-      Shop
+      Shop Banner
+
+      Shop boards
+
+      About Surf-Rentals
+
     </div>
   )
 }
