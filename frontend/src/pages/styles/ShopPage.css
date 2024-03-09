@@ -26,3 +26,32 @@
     object-fit: cover;
     z-index: -1;
   }
+
+  .about{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+  }
+
+  .right{
+    margin-top: 44px;
+  }
+
+  .whyus{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    text-align: center;
+  }
+
+  .popular{
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+
+  .john-video{
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
