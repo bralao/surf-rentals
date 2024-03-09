@@ -1,0 +1,28 @@
+  .shop {
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 50px;
+  }
+
+  .banner {
+    text-align: center;
+    padding: 100px;
+    color: rgb(218, 218, 218);
+  }
+  .banner img{
+    width: 300px;
+  }
+  .banner h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+
+  .banner video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
