@@ -1,5 +1,7 @@
 import React from 'react'
 import './SurfboardDisplay.css'
+import BookNow from '../booking/Booking';
+
 
 const SurfboardDisplay = (props) => {
 
@@ -19,6 +21,10 @@ const SurfboardDisplay = (props) => {
         <p>{surfboard.description}</p>
         <h3>Dimensions: {surfboard.height} x {surfboard.width} x {surfboard.thickness}</h3>
         <h3>Volume: {surfboard.volume} </h3>
+
+        <BookNow />
+
+        
       </div>
     </div>
   )
