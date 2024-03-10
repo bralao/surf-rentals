@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart, faSignIn } from '@fortawesome/free-solid-svg-icons'
 import './Navbar.css'
 
-
 const Navbar = () => {
 
   const [menu, setMenu] = useState("shop");
