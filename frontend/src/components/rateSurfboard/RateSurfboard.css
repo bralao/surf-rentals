@@ -1,0 +1,20 @@
+
+.rate button{
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 100px;
+  justify-content: center;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.rate button:hover {
+  background-color: #0056b3;
+}
+.rate h3{
+  margin-left: 10px;
+}

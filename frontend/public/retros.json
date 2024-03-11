@@ -11,7 +11,8 @@
       "thickness": "2 11/16",
       "volume": "42.3L",
       "price": "40,00",
-      "description": "The CI Mid is a modern classic design resulting from a fun collaboration with Devon Howard, a southern California surfer that has spent the past two decades riding and refining egg-inspired designs that are in a category of boards many refer to as midlengths."
+      "description": "The CI Mid is a modern classic design resulting from a fun collaboration with Devon Howard, a southern California surfer that has spent the past two decades riding and refining egg-inspired designs that are in a category of boards many refer to as midlengths.",
+      "rate": "4.6"
     },
     {
       "id": 6,
@@ -24,7 +25,8 @@
       "thickness": "2 3/4",
       "volume": "34.4L",
       "price": "50,00",
-      "description": "Approachable for any style of surfing. A board that you can really push on rail or just enjoy the easy down the line speed."
+      "description": "Approachable for any style of surfing. A board that you can really push on rail or just enjoy the easy down the line speed.",
+      "rate": null
     },
     {
       "id": 7,
@@ -37,7 +39,8 @@
       "thickness": "2 9/16",
       "volume": "32.4L",
       "price": "40,00",
-      "description": "Get forward on this user-friendly board and drive from the center and you’ll have all the speed and flow you always desired."
+      "description": "Get forward on this user-friendly board and drive from the center and you’ll have all the speed and flow you always desired.",
+      "rate": "4.4"
     },
     {
       "id": 8,
@@ -50,7 +53,8 @@
       "thickness": "2 7/8",
       "volume": "51.8L",
       "price": "40,00",
-      "description": "The CI Mid is a modern classic design resulting from a fun collaboration with Devon Howard, a southern California surfer that has spent the past two decades riding and refining egg-inspired designs that are in a category of boards many refer to as midlengths."
+      "description": "The CI Mid is a modern classic design resulting from a fun collaboration with Devon Howard, a southern California surfer that has spent the past two decades riding and refining egg-inspired designs that are in a category of boards many refer to as midlengths.",
+      "rate": null
     }
   ]
 }

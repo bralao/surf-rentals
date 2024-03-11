@@ -4,6 +4,7 @@ import Breadcrum from '../components/breadcrum/Breadcrum';
 import SurfboardDisplay from '../components/surfboardDisplay/SurfboardDisplay';
 import RelatedSurfboards from '../components/relatedSurfboards/RelatedSurfboards';
 
+
 const SurfboardPage = () => {
   const { category, surfboardId } = useParams();
   const [ surfboard, setSurfboard ] = useState({});
@@ -42,7 +43,7 @@ const SurfboardPage = () => {
     <div>
       <Breadcrum surfboard={surfboard} />
       <SurfboardDisplay surfboard={surfboard} />
-      <RelatedSurfboards allSurfboards={allSurfboards} chosenSurfboard={surfboard}/>
+      <RelatedSurfboards allSurfboards={allSurfboards} chosenSurfboard={surfboard} />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from 'react'
 import './SurfboardDisplay.css'
-import BookNow from '../booking/Booking';
-
+import Booking from '../booking/Booking.jsx'
+import RateSurfboard from '../rateSurfboard/RateSurfboard.jsx'
 
 const SurfboardDisplay = (props) => {
 
@@ -16,15 +16,18 @@ const SurfboardDisplay = (props) => {
 
       <div className="productdisplay-right">
         <h5>Brand: {surfboard.brand}</h5>
-        <h1>{surfboard.brand} {surfboard.model} {surfboard.height} ({surfboard.volume})</h1>
+        <div className="name-rate">
+          <h1>{surfboard.brand} {surfboard.model} {surfboard.height} ({surfboard.volume})</h1>
+          <RateSurfboard surfboard={surfboard}/>
+        </div>
         <h3>from €{surfboard.price}</h3>
         <p>{surfboard.description}</p>
         <h3>Dimensions: {surfboard.height} x {surfboard.width} x {surfboard.thickness}</h3>
         <h3>Volume: {surfboard.volume} </h3>
 
-        <BookNow />
+        <Booking />
 
-        
+
       </div>
     </div>
   )
