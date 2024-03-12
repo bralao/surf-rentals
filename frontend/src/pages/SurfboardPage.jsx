@@ -16,22 +16,22 @@ const SurfboardPage = () => {
 
     const fetchData = async () => {
       try {
-        const response = await fetch(`/${category}.json`);
+        const response = await fetch(`/surfboards.json`);
         if (!response.ok) {
-          throw new Error(`Failed to fetch ${category} data`);
+          throw new Error(`Failed to fetch surfboards data`);
         }
         const data = await response.json();
-        const foundSurfboard = data.Data.find(
-          (item) => item.id === parseInt(surfboardId)
+        const foundSurfboard = data.find(
+          (item) => item.id === parseInt(surfboardId) && item.category === category
         );
         if (foundSurfboard) {
           setSurfboard(foundSurfboard);
         } else {
           throw new Error(`Surfboard with ID ${surfboardId} not found in ${category}`);
         }
-      setAllSurfboards(data.Data); // Set all surfboards data
+        setAllSurfboards(data); // Set all surfboards data
       } catch (error) {
-        console.error(`Error fetching ${category} data:`, error);
+        console.error(`Error fetching surfboard data:`, error);
       }
     };
 

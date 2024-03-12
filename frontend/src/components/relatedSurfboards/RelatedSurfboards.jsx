@@ -9,7 +9,6 @@ const RelatedSurfboards = ({allSurfboards, chosenSurfboard}) => {
   );
 
 
-
   return (
     <div className="related-surfboards">
       <h3>Related Surfboards</h3>

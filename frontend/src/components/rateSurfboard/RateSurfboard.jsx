@@ -23,7 +23,6 @@ const RateSurfboard = ({ surfboard }) => {
       });
 
       alert(`New rate submitted: ${rate}`);
-      // Optionally, you can update surfboard rate here if needed
     } else {
       alert('Invalid rate! Rate must be a number between 0 and 5.');
     }
@@ -33,7 +32,7 @@ const RateSurfboard = ({ surfboard }) => {
     <div className="rate">
       <button onClick={handleRateChange}>
         <h5>Rate:</h5>
-        <h3>{rateData.averageRating.toFixed(1)}</h3> {/* Display average rating */}
+        <h3>{rateData.averageRating.toFixed(1)}</h3>
         <h5>/5</h5>
       </button>
     </div>
