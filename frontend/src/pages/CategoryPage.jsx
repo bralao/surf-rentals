@@ -2,21 +2,21 @@ import React, { useState, useEffect } from 'react'
 import './styles/CategoryPage.css'
 import Item from '../components/item/Item'
 
-
 const CategoryPage = (props) => {
   const [surfboards, setSurfboards] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${props.category}.json`);
+        const response = await fetch('/surfboards.json');
         if (!response.ok) {
-          throw new Error(`Failed to fetch ${props.category} data`);
+          throw new Error(`Failed to fetch surfboard data`);
         }
         const data = await response.json();
-        setSurfboards(data.Data || []);
+        const categoryItems = data.filter(item => item.category === props.category)
+        setSurfboards(categoryItems);
       } catch (error) {
-        console.error(`Error fetching ${props.category} data:`, error);
+        console.error(`Error fetching surfboard data:`, error);
       }
     };
 
