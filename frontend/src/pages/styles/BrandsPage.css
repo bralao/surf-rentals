@@ -1,0 +1,19 @@
+.shop-brand{
+  margin-left: 250px;
+  margin-right: 250px;
+}
+
+.shop-brand h1{
+  text-align: center;
+  margin-top: 50px;
+}
+
+.shopbrand-items{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 50px;
+}
+
+.shopbrand-item{
+  padding: 10px;
+}

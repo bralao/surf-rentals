@@ -1,9 +1,8 @@
-// CategoryPage.jsx
 import React, { useState, useEffect } from 'react';
-import './styles/CategoryPage.css';
+import './styles/BrandsPage.css';
 import Item from '../components/item/Item';
 
-const CategoryPage = (props) => {
+const BrandsPage = (props) => {
   const [surfboards, setSurfboards] = useState([]);
 
   useEffect(() => {
@@ -14,23 +13,24 @@ const CategoryPage = (props) => {
           throw new Error(`Failed to fetch surfboard data`);
         }
         const data = await response.json();
-        const categoryItems = data.filter(item => item.category === props.category)
-        setSurfboards(categoryItems);
+        const brandItems = data.filter(item => item.brand === props.brand);
+        console.log(brandItems)
+        setSurfboards(brandItems);
       } catch (error) {
         console.error(`Error fetching surfboard data:`, error);
       }
     };
 
     fetchData();
-  }, [props.category]);
+  }, [props.brand]);
 
   return (
-    <div className="shop-category">
-      <h1 style={{ textTransform: 'capitalize' }}>{props.category}</h1>
-      <div className="shopcategory-items">
+    <div className="shop-brand">
+      <h1 style={{ textTransform: 'capitalize' }}>{props.brand}</h1>
+      <div className="shopbrand-items">
         {surfboards.map((item) => (
-          <div className="shopcategory-item" key={item.id}>
-            <Item item={item} pageType="category" />
+          <div className="shopbrand-item" key={item.id}>
+            <Item item={item} pageType="brand" />
           </div>
         ))}
       </div>
@@ -38,4 +38,4 @@ const CategoryPage = (props) => {
   );
 };
 
-export default CategoryPage;
+export default BrandsPage;
