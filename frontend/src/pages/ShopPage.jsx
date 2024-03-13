@@ -62,9 +62,9 @@ const ShopPage = () => {
           height="810"
           src="https://www.youtube.com/embed/dexWs7urJtk?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0&autohide=1"
           title="YouTube video player"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </div>
 

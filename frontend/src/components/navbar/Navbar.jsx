@@ -48,11 +48,20 @@ const Navbar = () => {
           Brands
           {isOpenBrands && (
             <div className="dropdown-content">
-              <p>Pyzel</p>
-              <p>Channel Islands</p>
+              <Link to='/thunderbolt'>Thunderbolt</Link>
+              <Link to='/pyzel'>Pyzel</Link>
+              <Link to='/channel-islands'>Channel Islands</Link>
+              <Link to='/firewire'>Firewire</Link>
+              <Link to='/haydenshapes'>HaydenShapes</Link>
+              <Link to='/js-industries'>JS Industries</Link>
+              <Link to='/sharpeye'>SharpEye</Link>
+              <Link to='/torq'>Torq</Link>
+              <Link to='/takayama'>Takayama</Link>
+              <Link to='/album'>Album</Link>
+              <Link to='/dhd'>DHD</Link>
             </div>
           )}
-          {location.pathname.startsWith('/brands') ? <hr/> : null}
+          {location.pathname.startsWith ('/thunderbolt') || location.pathname.startsWith('/pyzel') || location.pathname.startsWith('/channel-islands') || location.pathname.startsWith('/firewire') || location.pathname.startsWith('/lost') || location.pathname.startsWith('/haydenshapes') || location.pathname.startsWith('/js-industries') || location.pathname.startsWith('/sharpeye') || location.pathname.startsWith('/torq') || location.pathname.startsWith('/takayama') || location.pathname.startsWith('/album') || location.pathname.startsWith('/dhd') ? <hr/> : null}
         </li>
       </div>
 
