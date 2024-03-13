@@ -6,14 +6,13 @@ import RelatedSurfboards from '../components/relatedSurfboards/RelatedSurfboards
 
 
 const SurfboardPage = () => {
-  const { category, surfboardId } = useParams();
+  const { surfboardId } = useParams();
   const [ surfboard, setSurfboard ] = useState({});
   const [ allSurfboards, setAllSurfboards ] = useState([]);
 
   console.log(allSurfboards)
 
   useEffect(() => {
-
     const fetchData = async () => {
       try {
         const response = await fetch(`/surfboards.json`);
@@ -22,21 +21,22 @@ const SurfboardPage = () => {
         }
         const data = await response.json();
         const foundSurfboard = data.find(
-          (item) => item.id === parseInt(surfboardId) && item.category === category
+          (item) => item.id === parseInt(surfboardId)
         );
         if (foundSurfboard) {
           setSurfboard(foundSurfboard);
         } else {
-          throw new Error(`Surfboard with ID ${surfboardId} not found in ${category}`);
+          throw new Error(`Surfboard with ID ${surfboardId} not found`);
         }
-        setAllSurfboards(data); // Set all surfboards data
+        setAllSurfboards(data);
       } catch (error) {
         console.error(`Error fetching surfboard data:`, error);
       }
     };
 
     fetchData();
-  }, [category, surfboardId]);
+  }, [surfboardId]);
+
 
 
   return (

@@ -30,7 +30,7 @@ const CategoryPage = (props) => {
       <div className="shopcategory-items">
         {surfboards.map((item) => (
           <div className="shopcategory-item" key={item.id}>
-            <Item item={item} pageType="category" />
+            <Item item={item} category={item.category} pageType={"category"} />
           </div>
         ))}
       </div>

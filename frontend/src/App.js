@@ -20,8 +20,6 @@ const App = () => {
           <Route path="/shortboards" element={<CategoryPage category="shortboards"/>}/>
           <Route path="/longboards" element={<CategoryPage category="longboards"/>}/>
 
-          <Route path="/:category/:surfboardId" element={<Surfboard/>} />
-
           <Route path="/thunderbolt" element={<BrandsPage brand="Thunderbolt" />} />
           <Route path="/pyzel" element={<BrandsPage brand="Pyzel" />} />
           <Route path="/channel-islands" element={<BrandsPage brand="Channel Islands" />} />
@@ -35,6 +33,8 @@ const App = () => {
           <Route path="/dhd" element={<BrandsPage brand="DHD" />} />
 
           <Route path="/:category/:surfboardId" element={<Surfboard />} />
+          <Route path="/:brand/:surfboardId" element={<Surfboard />} />
+
 
           <Route path="/login" element={<LoginSignup />} />
           <Route path="/cart" element={<Cart />} />
