@@ -30,7 +30,7 @@ const BrandsPage = (props) => {
       <div className="shopbrand-items">
         {surfboards.map((item) => (
           <div className="shopbrand-item" key={item.id}>
-            <Item item={item} pageType="brand" />
+            <Item item={item} brand={item.brand} pageType="brand" />
           </div>
         ))}
       </div>

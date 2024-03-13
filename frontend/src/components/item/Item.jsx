@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Item.css';
 
-const Item = ({ item, pageType }) => {
+const Item = ({ item, pageType, category, brand }) => {
 
   const getItemLink = () => {
     if (pageType === "category") {
-      return `/${item.category}/${item.id}`;
+      return `/${category}/${item.id}`;
     } else if (pageType === "brand") {
-      return `/${item.brand}/${item.id}`;
+      return `/${brand.toLowerCase()}/${item.id}`;
     }
     return "/";
   };
