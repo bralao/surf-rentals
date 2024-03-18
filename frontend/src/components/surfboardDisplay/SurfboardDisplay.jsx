@@ -25,7 +25,7 @@ const SurfboardDisplay = (props) => {
         <h3>Dimensions: {surfboard.height} x {surfboard.width} x {surfboard.thickness}</h3>
         <h3>Volume: {surfboard.volume} </h3>
 
-        <Booking />
+        <Booking surfboard={surfboard}/>
 
 
       </div>

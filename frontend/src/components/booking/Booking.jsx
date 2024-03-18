@@ -1,19 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './Booking.css';
+import { ShopContext } from '../../context/ShopContext';
 
-const BookNow = () => {
-  const [selectedOption, setSelectedOption] = useState(""); // State to hold the selected option
+const BookNow = (props) => {
+  const [selectedDays, setSelectedDays] = useState(""); // State to hold the selected days
+  const [selectedWetsuit, setSelectedWetsuit] = useState(""); // State to hold the selected wetsuit option
+  const { surfboard } = props;
+  const { addToCart } = useContext(ShopContext); // Destructure addToCart from the context
 
-  // Function to handle dropdown change
-  const handleDropdownChange = (event) => {
-    setSelectedOption(event.target.value); // Update selectedOption state with the selected value
+  const handleDaysDropdownChange = (event) => {
+    setSelectedDays(event.target.value);
+  };
+
+  const handleWetsuitDropdownChange = (event) => {
+    setSelectedWetsuit(event.target.value);
   };
 
   return (
     <div className="booking">
       <div className="days">
         <h4>How many days?</h4>
-        <select value={selectedOption} onChange={handleDropdownChange}>
+        <select value={selectedDays} onChange={handleDaysDropdownChange}>
           <option value="">Choose an option</option>
           <option value="1 day">1 day</option>
           <option value="2 days">2 days</option>
@@ -29,14 +36,14 @@ const BookNow = () => {
       </div>
       <div className="wetsuit">
         <h4>Do you need a wetsuit?</h4>
-        <select value={selectedOption} onChange={handleDropdownChange}>
+        <select value={selectedWetsuit} onChange={handleWetsuitDropdownChange}>
           <option value="">Choose an option</option>
           <option value="Yes">Yes</option>
           <option value="No">No</option>
         </select>
       </div>
       <div className="booknow">
-        <button>Book Now</button>
+        <button onClick={() => {addToCart(surfboard.id, selectedDays, selectedWetsuit)} }>Book Now</button>
       </div>
     </div>
   );

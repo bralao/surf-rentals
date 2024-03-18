@@ -1,11 +1,18 @@
 import React, { createContext, useState, useEffect } from 'react'
 
+export const ShopContext = createContext(null)
 
-export const ShopContext = createContext()
+const getDefaultCart = () =>{
+  let cart = {}; // initializing an empty cart object, which will be used to store the cart items
+  for (let i = 0; i < 30+1; i++) {
+    cart[i] = 0; // for each product, we set the initial quantity to 0
+  }
+  return cart;
+}
 
 const ShopContextProvider = (props) => {
   const [surfboards, setSurfboards] = useState([])
-  const [cart, setCart] = useState([])
+  const [cartItems, setCartItems] = useState(getDefaultCart());
 
   useEffect(()=>{
     const fetchData = async () => {
@@ -26,15 +33,27 @@ const ShopContextProvider = (props) => {
 
 
 
-  const addToCart = (product) => {
-    setCart([...cart, product]);
+  const addToCart = (productId) => {
+    setCartItems(prevCartItems => {
+      const updatedCart = { ...prevCartItems };
+      updatedCart[productId] += 1;
+      console.log('Cart:', updatedCart); // Log updatedCart instead of cartItems
+      return updatedCart;
+    });
   };
+
+
 
   const removeFromCart = (productId) => {
-    setCart(cart.filter(item => item.id !== productId));
+    const updatedCart = {...cartItems};
+    updatedCart[productId] -= 1;
+    if (updatedCart[productId] < 0) {
+      updatedCart[productId] = 0;
+    }
+    setCartItems(updatedCart);
   };
 
-  const contextValue = { surfboards, cart, setCart, addToCart, removeFromCart}
+  const contextValue = { surfboards, cartItems, setCartItems, addToCart, removeFromCart}
   return(
     <ShopContext.Provider value={contextValue}>
       {props.children}
