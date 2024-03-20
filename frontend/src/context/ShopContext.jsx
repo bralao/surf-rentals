@@ -11,7 +11,7 @@ const getDefaultCart = () =>{
 }
 
 const ShopContextProvider = (props) => {
-  const [surfboards, setSurfboards] = useState([])
+  const [surfboards, setSurfboards] = useState([]);
   const [cartItems, setCartItems] = useState(getDefaultCart());
 
   useEffect(()=>{
@@ -23,7 +23,7 @@ const ShopContextProvider = (props) => {
         }
         const data = await response.json();
         console.log('Data:', data);
-        setSurfboards(data.Data); // "Data" key in surfboards.json
+        setSurfboards(data);
       } catch (error) {
         console.log('Error fetching data:', error);
       }
@@ -32,26 +32,24 @@ const ShopContextProvider = (props) => {
   }, []);
 
 
-
-  const addToCart = (productId) => {
-    setCartItems(prevCartItems => {
-      const updatedCart = { ...prevCartItems };
-      updatedCart[productId] += 1;
-      console.log('Cart:', updatedCart); // Log updatedCart instead of cartItems
-      return updatedCart;
-    });
+  const addToCart = (surfboardId) => {
+    const updatedCartItems = { ...cartItems };     // Clone cartItems object to avoid mutation
+    updatedCartItems[surfboardId] += 1;     // Increment the quantity of the surfboard in the cart by 1
+    setCartItems(updatedCartItems);     // Update cartItems state
+    console.log(updatedCartItems)
   };
 
-
-
-  const removeFromCart = (productId) => {
-    const updatedCart = {...cartItems};
-    updatedCart[productId] -= 1;
-    if (updatedCart[productId] < 0) {
-      updatedCart[productId] = 0;
+  const removeFromCart = (surfboardId) => {
+    const updatedCartItems = { ...cartItems };
+    if (updatedCartItems.hasOwnProperty(surfboardId)) {
+      if (updatedCartItems[surfboardId] > 0) {
+        updatedCartItems[surfboardId] -= 1;
+      }
     }
-    setCartItems(updatedCart);
+    setCartItems(updatedCartItems);
+    console.log(updatedCartItems);
   };
+
 
   const contextValue = { surfboards, cartItems, setCartItems, addToCart, removeFromCart}
   return(
