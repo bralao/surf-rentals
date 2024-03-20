@@ -51,7 +51,18 @@ const ShopContextProvider = (props) => {
   };
 
 
-  const contextValue = { surfboards, cartItems, setCartItems, addToCart, removeFromCart}
+  const getTotalCartAmount = () => {
+    let totalAmount = 0;
+    for (const item in cartItems ) {
+      if(cartItems[item] > 0) {
+        let itemInfo = surfboards.find((surfboard) => surfboard.id === Number(item));
+        totalAmount += (parseFloat(itemInfo.price) * cartItems[item]);
+      }
+    }
+    return totalAmount;
+  }
+
+  const contextValue = { surfboards, cartItems, setCartItems, addToCart, removeFromCart, getTotalCartAmount}
   return(
     <ShopContext.Provider value={contextValue}>
       {props.children}
