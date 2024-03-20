@@ -1,26 +1,17 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import './Booking.css';
 import { ShopContext } from '../../context/ShopContext';
 
-const BookNow = (props) => {
-  const [selectedDays, setSelectedDays] = useState(""); // State to hold the selected days
-  const [selectedWetsuit, setSelectedWetsuit] = useState(""); // State to hold the selected wetsuit option
+const Booking = (props) => {
   const { surfboard } = props;
   const { addToCart } = useContext(ShopContext); // Destructure addToCart from the context
 
-  const handleDaysDropdownChange = (event) => {
-    setSelectedDays(event.target.value);
-  };
-
-  const handleWetsuitDropdownChange = (event) => {
-    setSelectedWetsuit(event.target.value);
-  };
 
   return (
     <div className="booking">
       <div className="days">
         <h4>How many days?</h4>
-        <select value={selectedDays} onChange={handleDaysDropdownChange}>
+        <select>
           <option value="">Choose an option</option>
           <option value="1 day">1 day</option>
           <option value="2 days">2 days</option>
@@ -36,17 +27,17 @@ const BookNow = (props) => {
       </div>
       <div className="wetsuit">
         <h4>Do you need a wetsuit?</h4>
-        <select value={selectedWetsuit} onChange={handleWetsuitDropdownChange}>
+        <select>
           <option value="">Choose an option</option>
           <option value="Yes">Yes</option>
           <option value="No">No</option>
         </select>
       </div>
       <div className="booknow">
-        <button onClick={() => {addToCart(surfboard.id, selectedDays, selectedWetsuit)} }>Book Now</button>
+        <button onClick={() => {addToCart(surfboard.id)} }>Book Now</button>
       </div>
     </div>
   );
 };
 
-export default BookNow;
+export default Booking;
