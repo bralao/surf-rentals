@@ -7,6 +7,7 @@ import BrandsPage from './pages/BrandsPage.jsx'
 import Surfboard from './pages/SurfboardPage.jsx'
 import Cart from './pages/CartPage.jsx'
 import LoginSignup from './pages/LoginSignupPage.jsx'
+import Footer from './components/footer/Footer.jsx'
 
 const App = () => {
   return (
@@ -39,7 +40,7 @@ const App = () => {
           <Route path="/login" element={<LoginSignup />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
-
+        <Footer/>
       </BrowserRouter>
     </div>
   )
