@@ -51,7 +51,7 @@ const ShopContextProvider = (props) => {
   };
 
 
-  const getTotalCartAmount = () => {
+  const getTotalCartAmount = () => { // for cart total amount
     let totalAmount = 0;
     for (const item in cartItems ) {
       if(cartItems[item] > 0) {
@@ -62,7 +62,17 @@ const ShopContextProvider = (props) => {
     return totalAmount;
   }
 
-  const contextValue = { surfboards, cartItems, setCartItems, addToCart, removeFromCart, getTotalCartAmount}
+  const getTotalCartItems = () => { // for navbar cart-count of items
+    let totalItems = 0;
+    for (const item in cartItems) {
+      if (cartItems[item] > 0) {
+        totalItems += cartItems[item];
+      }
+    }
+    return totalItems;
+  }
+
+  const contextValue = { surfboards, cartItems, setCartItems, addToCart, removeFromCart, getTotalCartAmount, getTotalCartItems}
   return(
     <ShopContext.Provider value={contextValue}>
       {props.children}
