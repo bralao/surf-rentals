@@ -1,57 +1,70 @@
-  .shop {
-    margin-left: 200px;
-    margin-right: 200px;
-    margin-top: 50px;
-  }
+.shop {
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 50px;
+}
 
-  .banner {
-    text-align: center;
-    padding: 100px;
-    color: rgb(218, 218, 218);
-  }
-  .banner img{
-    width: 300px;
-  }
-  .banner h1 {
-    font-size: 50px;
-    margin-bottom: 20px;
-  }
+.banner {
+  text-align: center;
+  padding: 100px;
+  color: rgb(218, 218, 218);
+}
+.banner img{
+  width: 300px;
+}
+.banner h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
 
-  .banner video{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-  }
+.banner video{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
 
-  .about{
-    display: flex;
-    justify-content: space-between;
-    padding: 30px;
-  }
+.about{
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
 
-  .right{
-    margin-top: 44px;
-  }
+.right{
+  margin-top: 44px;
+}
 
-  .whyus{
-    margin-top: 100px;
-    margin-bottom: 100px;
-    display: flex;
-    justify-content: space-between;
-    gap: 50px;
-    text-align: center;
-  }
+.whyus{
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  text-align: center;
+}
 
-  .popular{
-    margin-top: 100px;
-    margin-bottom: 100px;
-  }
+.popular{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
 
-  .john-video{
-    margin-top: 100px;
-    margin-bottom: 100px;
-  }
+.john-video{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.surf-video{
+  display: flex;
+  justify-content: center;
+}
+
+.video-left video{
+  width: 90%;
+}
+
+.video-right{
+  margin-top: 90px;
+}
