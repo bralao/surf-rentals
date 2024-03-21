@@ -73,3 +73,17 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 90px;
 }
+
+.nav-cart-count{
+  width: 30px;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -35px;
+  margin-left: -90px;
+  border-radius: 11px;
+  font-size: 14px;
+  background: red;
+  color: white;
+}

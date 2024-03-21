@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
-import logo from '../assets/logo.jpg';
+import React, { useState, useContext } from 'react';
+import { ShopContext } from '../../context/ShopContext';
 import { Link, useLocation } from 'react-router-dom';
+import './Navbar.css';
+import logo from '../assets/logo.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faSignIn } from '@fortawesome/free-solid-svg-icons';
-import './Navbar.css';
 
 const Navbar = () => {
   const location = useLocation(); // Get the current location
   const [isOpenCategories, setIsOpenCategories] = useState(false);
   const [isOpenBrands, setIsOpenBrands] = useState(false);
+  const { getTotalCartItems } = useContext(ShopContext);
 
   const toggleCategoriesDropdown = () => {
     setIsOpenCategories(!isOpenCategories);
@@ -68,6 +70,7 @@ const Navbar = () => {
       <div className="nav-login-cart">
         <Link className="nav-login-link" to='/login' style={{textDecoration: 'none'}}><FontAwesomeIcon icon={faSignIn} /></Link>
         <Link className="nav-cart-link" to='/cart' style={{textDecoration: 'none'}}><FontAwesomeIcon icon={faShoppingCart} /></Link>
+        <div className="nav-cart-count">{getTotalCartItems()}</div>
       </div>
     </div>
   );
