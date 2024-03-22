@@ -1,34 +1,37 @@
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 0px 70px;
   margin: 20px 200px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  align-items: center;
   border-radius: 80px;
   background-color: rgba(255, 255, 255);
+  justify-content: center;
 }
 
-.nav-logo {
+.navbar-items{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  gap: 200px;
+}
+
+.nav-logo{
   display: flex;
   align-items: center;
-  gap: 10px;
 }
 
-.nav-logo img {
-  width: 90px;
+.nav-logo img{
+  width: 80px;
 }
-
-.nav-logo p {
-  color: #171717;
-  font-size: 25px;
-  font-weight: 90;
+.nav-logo p{
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0px 20px;
 }
 
 .nav-menu {
   display: flex;
   align-items: center;
   list-style: none;
+  gap: 20px;
 }
 
 .nav-menu li {
@@ -64,11 +67,10 @@
 .nav-login-cart {
   display: flex;
   align-items: center;
-  gap: 70px;
+  gap: 20px;
 }
 
-.nav-login-link,
-.nav-cart-link {
+.nav-login-link, .nav-cart-link {
   padding: 10px 20px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 90px;
@@ -81,7 +83,7 @@
   justify-content: center;
   align-items: center;
   margin-top: -35px;
-  margin-left: -90px;
+  margin-left: -30px;
   border-radius: 11px;
   font-size: 14px;
   background: red;
