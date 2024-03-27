@@ -47,4 +47,89 @@ app.post("/upload", upload.single('product'), (req, res)=>{
   })
 })
 
+//schema for addproduct
+const Product = mongoose.model("Product", {
+  id: {
+    type: Number,
+    required: true,
+  },
+  image: {
+    type: String,
+    required: true,
+  },
+  category: {
+    type: String,
+    required: true,
+  },
+  brand: {
+    type: String,
+    required: true,
+  },
+  model: {
+    type: String,
+    required: true,
+  },
+  height: {
+    type: String,
+    required: true,
+  },
+  width: {
+    type: String,
+    required: true,
+  },
+  thickness: {
+    type: String,
+    required: true,
+  },
+  volume: {
+    type: String,
+    required: true,
+  },
+  price: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  rate: {
+    type: Number,
+    required: false,
+  }
+})
 
+//addproduct endpoint
+app.post('/addproduct', async(req, res)=>{
+  let products = await Product.find({});
+  let id;
+  if(products.length > 0) {
+    let last_product_array = products.slice(-1);
+    let last_product = last_product_array[0];
+    id = last_product.id + 1;
+  } else {
+    id = 1;
+  }
+
+  const product = new Product ({
+    id: id,
+    image: req.body.image,
+    category: req.body.category,
+    brand: req.body.brand,
+    model: req.body.model,
+    height: req.body.height,
+    width: req.body.width,
+    thickness: req.body.thickness,
+    volume: req.body.volume,
+    price: req.body.price,
+    description: req.body.description,
+    rate: req.body.rate,
+  });
+  console.log(product);
+  await product.save();
+  console.log("Saved");
+  res.json({
+    success: true,
+    name: req.body.brand + " "+ req.body.model + " " + req.body.volume + " Added Successfully"
+  })
+})
