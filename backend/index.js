@@ -147,3 +147,27 @@ app.get('/allproducts', async(req, res) => {
   console.log("All Products Fetched");
   res.json(products);
 })
+
+//schema for user
+const Users = mongoose.model('Users',{ // we create a model for the user
+  name: { // we define the name of the user
+    type: String,
+    required: true,
+  },
+  email: { // we define the email of the user
+    type: String,
+    unique: true,
+    required: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  cartData: {
+    type: Object,
+  },
+  date: {
+    type: Date,
+    default: Date.now,
+  }
+})
