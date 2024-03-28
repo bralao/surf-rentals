@@ -93,13 +93,10 @@ const Product = mongoose.model("Product", {
     type: String,
     required: true,
   },
-  rate: {
-    type: Number,
-    required: false,
-  }
+
 })
 
-//addproduct endpoint
+//addproduct endpoint (post)
 app.post('/addproduct', async(req, res)=>{
   let products = await Product.find({});
   let id;
@@ -134,7 +131,7 @@ app.post('/addproduct', async(req, res)=>{
   })
 })
 
-//removeproduct endpoint
+//removeproduct endpoint (post)
 app.post('/removeproduct', async(req, res)=>{
   await Product.findOneAndDelete({id: req.body.id});
   console.log("Removed");
@@ -142,4 +139,11 @@ app.post('/removeproduct', async(req, res)=>{
     success: true,
     name: `Product ${req.body.id} Removed Successfully`
   })
+})
+
+//allproducts endpoint (get)
+app.get('/allproducts', async(req, res) => {
+  let products = await Product.find({});
+  console.log("All Products Fetched");
+  res.json(products);
 })
