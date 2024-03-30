@@ -8,6 +8,7 @@ const multer = require("multer") //able to create image storage
 
 const path = require("path") //include path of express eerver
 const cors = require("cors") //able to provide access to reactproject, ran in a different port
+const { AsyncLocalStorage } = require("async_hooks")
 
 app.use(express.json()); //converts any request from client into json format.
 app.use(cors());
@@ -150,11 +151,11 @@ app.get('/allproducts', async(req, res) => {
 
 //schema for user
 const Users = mongoose.model('Users',{ // we create a model for the user
-  name: { // we define the name of the user
+  username: {
     type: String,
     required: true,
   },
-  email: { // we define the email of the user
+  email: {
     type: String,
     unique: true,
     required: true,
@@ -170,4 +171,33 @@ const Users = mongoose.model('Users',{ // we create a model for the user
     type: Date,
     default: Date.now,
   }
+})
+
+//user signup endpoint
+app.post('/signup', async (req, res) => {
+  let check = await Users.findOne({email:req.body.email});
+  if (check) {
+    return res.status(400).json({success: false, errors: "Email already exists"})
+  }
+  let cart = {};
+  for (let i = 0; i < 300; i++) {
+    cart[i] = 0;
+  }
+  const user = new Users({
+    username: req.body.username,
+    email: req.body.email,
+    password: req.body.password,
+    cartData: cart,
+  })
+
+  await user.save();
+
+  const data = {
+    user: {
+      id: user.id,
+    }
+  }
+
+  const token = jwt.sign(data, 'secret_ecom')
+  res.json({success: true, token})
 })
