@@ -12,7 +12,7 @@ const Sidebar = () => {
       </Link>
       <Link to={'/listproduct'} style={{textDecoration: 'none'}}>
         <div className="sidebar-item">
-          <p>List Product</p>
+          <p>List Products</p>
         </div>
       </Link>
     </div>

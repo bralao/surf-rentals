@@ -58,6 +58,7 @@ const AddProduct = () => {
 
   return (
     <div className="add-product">
+      <h1>Add Product</h1>
       <div className="addproduct-itemfield">
         <label htmlFor="file-input" className="addproduct-thumnail-img">
           {image && <img src={URL.createObjectURL(image)} alt="Selected Image" />}

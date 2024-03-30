@@ -1,10 +1,14 @@
-.add-product{
+.add-product {
   box-sizing: border-box;
   width: 50%;
   padding: 30px 50px;
   margin: 20px auto;
   border-radius: 6px;
   background: white;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .addproduct-itemfield{
   margin: 20px auto;
