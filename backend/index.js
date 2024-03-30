@@ -151,7 +151,7 @@ app.get('/allproducts', async(req, res) => {
 
 //schema for user
 const Users = mongoose.model('Users',{ // we create a model for the user
-  username: {
+  user: {
     type: String,
     required: true,
   },
@@ -184,7 +184,7 @@ app.post('/signup', async (req, res) => {
     cart[i] = 0;
   }
   const user = new Users({
-    username: req.body.username,
+    username: req.body.user,
     email: req.body.email,
     password: req.body.password,
     cartData: cart,
@@ -200,4 +200,25 @@ app.post('/signup', async (req, res) => {
 
   const token = jwt.sign(data, 'secret_ecom')
   res.json({success: true, token})
+})
+
+//user login endpoint
+app.post('/login', async (req, res) => {
+  let user = await Users.findOne({email: req.body.email});
+  if (user) {
+    const passCompare = req.body.password === user.password;
+    if (passCompare) {
+      const data = {
+        user: {
+          id: user.id,
+        }
+      }
+      const token = jwt.sign(data, 'secret_ecom')
+      res.json({success: true, token});
+    } else {
+      res.json({success: false, errors: "Invalid Password"})
+    }
+  } else {
+    res.json({success: false, errors: "Invalid email"})
+  }
 })
